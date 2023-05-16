@@ -11,7 +11,7 @@ export default defineConfig({
   plugins: [react()],
   define:{
     'process.env': {},
-      global: {},
+      global: "window"
   },
   server: {
     host: true

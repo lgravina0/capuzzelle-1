@@ -70,10 +70,10 @@ export const connect = () => {
     const { ethereum } = window;
     
     const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
-//     if(isMobile.any()){
-//     window.location = 'https://metamask.app.link/dapp/capuzzelle.vercel.app';
-//     return;
-//  }
+    if(isMobile.any()){
+    window.location = 'https://metamask.app.link/dapp/capuzzelle.vercel.app';
+    return;
+ }
   
     if (metamaskIsInstalled) {
       Web3EthContract.setProvider(ethereum);
