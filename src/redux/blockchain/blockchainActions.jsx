@@ -110,6 +110,7 @@ if (metamaskIsInstalled) {
       dispatch(connectFailed(`Change network to ${CONFIG.NETWORK.NAME}.`));
     }
   } catch (err) {
+    console.log('errore smart contract', err);
     dispatch(connectFailed("Something went wrong."));
   }
 } else {
