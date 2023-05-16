@@ -5,16 +5,35 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  "rewrites": [
-    {"source": "/(.*)", "destination": "/"}
+  resolve:{
+
+    alias: [
+      {
+        find: 'web3',
+        replacement: 'web3/dist/web3.min.js',
+      },
     ],
+  },
   plugins: [react()],
   define:{
     'process.env': {},
       global: "window"
+      
+      
   },
   server: {
     host: true
+  },
+  commonjsOptions: {
+    transformMixedEsModules: true,
+  },
+  "compilerOptions": {
+    "types": ["vite/client"]
+  },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
   },
   optimizeDeps: {
     esbuildOptions: {
