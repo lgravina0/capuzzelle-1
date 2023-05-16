@@ -5,6 +5,9 @@ import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfil
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  "rewrites": [
+    {"source": "/(.*)", "destination": "/"}
+    ],
   plugins: [react()],
   define:{
     'process.env': {},
