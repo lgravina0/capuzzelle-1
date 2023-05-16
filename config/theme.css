@@ -1,0 +1,483 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+:root {
+  --primary: #ffffff;
+  --primary-text: #000000;
+  --secondary: #ff1dec;
+  --secondary-text: #ffffff;
+  --accent: #505050;
+  --accent-text: #ffffff;
+}
+
+html {
+  
+  scroll-behavior: smooth;
+}
+body{
+  font-family: 'Inconsolata', monospace !important; 
+
+}
+nav#header {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  
+  float: left;
+  background-color: white;
+  
+  z-index: 99;
+  padding-left: 24px;
+  padding-right: 24px;
+  
+}
+nav#header.mobile {
+  display:none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 24px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  /* background-color: #111111; */
+  color: black;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+#button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+h1 {
+  font-size: 48px !important;
+  font-weight: 500 !important;
+  margin: 0 0 56px 0 !important;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+.logo{
+ 
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  height: 50px;
+  width: 50px;
+  padding: 8px;
+}
+h3 {
+  font-weight: bold;
+  font-size: 26px;
+}
+#progetto{
+  
+    display: flex;
+    justify-content: space-between;
+    gap: 20%;
+
+}
+#team{
+  
+  display: flex;
+  justify-content: space-between;
+  gap: 20%;
+
+}
+section#gallery,#team,#faq,#progetto {
+  
+  width: 80%;
+  margin: 128px auto;
+  /* position: relative; */
+  /* float: left; */
+  background-color: white;
+  /* border-bottom: 1px solid black;*/
+}
+.card-group {
+  flex-direction: row;
+  display: flex;
+  width: 60%;
+}
+.card-group .card {
+  
+  border-radius: 24px;
+  padding: 16px;
+  margin: 8px;
+}
+.card-group .card img {
+  width: 100%;
+  margin-bottom: 24px;
+}
+.card-group .card h3 {
+  color: black;
+  font-size: 24px;
+}
+.card-group .card p {
+  color: black;
+  font-size: 16px;
+}
+@media (max-width: 900px) {
+  .prova{
+    width: 100% !important;
+  }
+  .container-faq {
+    padding: 0 !important;
+    
+}
+  section#gallery,#team,#faq,#progetto {
+  
+    width: 90%;
+    margin: 48px auto;
+    /* position: relative; */
+    /* float: left; */
+    background-color: white;
+    /* border-bottom: 1px solid black;*/
+  }}
+
+section#footer {
+  
+  display: flex;
+    width: 100%;
+    position: relative;
+    float: left;
+    background-color: rgb(0, 0, 0);
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+  
+}
+#footer img {
+  width: 50px;
+}
+#footer p {
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+.container-gallery{
+  display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+.container-gallery img {
+  margin: 1%;
+  width: 23%;
+}
+@media (max-width:500px) {
+  .card-group {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+}
+  #team {
+    flex-direction: column;
+    
+}
+  #progetto {
+    flex-direction: column;
+    
+}
+  nav#header.mobile {
+    display:block
+}
+nav#header.desk {
+  display: none;
+}
+  .container-gallery img {
+  margin: 1%;
+  width: 48%;
+}
+  
+}
+.container-faq {
+  margin: 60px auto;
+  padding: 24px;
+  font-family: 'Inconsolata', monospace !important; 
+}
+
+.accordion .accordion-item {
+  font-family: 'Inconsolata', monospace !important; 
+  border-bottom: 1px solid #000000;
+}
+.accordion .accordion-item button[aria-expanded=true] {
+  font-family: 'Inconsolata', monospace !important; 
+  border-bottom: 1px solid #000000;
+}
+.accordion button {
+  font-family: 'Inconsolata', monospace !important; 
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1em 0;
+  color: #000000;
+  font-size: 1.15rem;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+.accordion button:hover, .accordion button:focus {
+  font-family: 'Inconsolata', monospace !important; 
+  cursor: pointer;
+  color: #000000;
+}
+.accordion button:hover::after, .accordion button:focus::after {
+  font-family: 'Inconsolata', monospace !important; 
+  cursor: pointer;
+  color: #03b5d2;
+  border: 1px solid #000000;
+}
+.accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+.accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+.accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+.accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+.accordion button[aria-expanded=true] {
+  color: #000000;
+}
+.accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+.accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+.accordion .accordion-content p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 2em 0;
+}
+
+/* Utilities */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--auto-grid-min-size, 14rem), 1fr)
+  );
+  grid-gap: var(--auto-grid-gap, 0);
+  padding: 0;
+}
+
+.flow > * + * {
+  margin-top: var(--flow-space, 1em);
+}
+
+/* Composition */
+.team {
+  --flow-space: 2em;
+}
+
+/* Blocks */
+.profile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  aspect-ratio: 1/1;
+  position: relative;
+  padding: 1.5rem;
+  color: #ffffff;
+  backface-visibility: hidden;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.profile::before,
+.profile::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  /*inset: 0;*/
+  top: 0;
+  left: 0;
+}
+
+.profile::before {
+  background: linear-gradient(
+    to top,
+    hsl(0 0% 0% / 0.79) 0%,
+    hsl(0 0% 0% / 0.787) 7.8%,
+    hsl(0 0% 0% / 0.779) 14.4%,
+    hsl(0 0% 0% / 0.765) 20.2%,
+    hsl(0 0% 0% / 0.744) 25.3%,
+    hsl(0 0% 0% / 0.717) 29.9%,
+    hsl(0 0% 0% / 0.683) 34.3%,
+    hsl(0 0% 0% / 0.641) 38.7%,
+    hsl(0 0% 0% / 0.592) 43.3%,
+    hsl(0 0% 0% / 0.534) 48.4%,
+    hsl(0 0% 0% / 0.468) 54.1%,
+    hsl(0 0% 0% / 0.393) 60.6%,
+    hsl(0 0% 0% / 0.31) 68.3%,
+    hsl(0 0% 0% / 0.216) 77.3%,
+    hsl(0 0% 0% / 0.113) 87.7%,
+    hsl(0 0% 0% / 0) 100%
+  );
+  transition: 300ms opacity linear;
+}
+
+.profile::after {
+  background: linear-gradient(
+    45deg,
+    hsl(5 97% 63% / 0.7) 0,
+    hsl(5 97% 63% / 0) 100%
+  );
+  opacity: 0;
+  transition: 300ms opacity linear;
+}
+
+.profile > * {
+  z-index: 1;
+}
+
+.profile img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  z-index: -1;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 200ms ease, transform 250ms linear;
+}
+
+.profile h2,
+.profile p {
+  transform: translateY(2ex);
+}
+
+.profile h2 {
+  font-size: 1.7rem;
+  line-height: 1.2;
+  font-weight: 900;
+  letter-spacing: 0.03ch;
+  transition: 300ms transform ease;
+}
+
+.profile p {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.profile p {
+  opacity: 0;
+  transition: 300ms opacity linear, 300ms transform ease-in-out;
+}
+
+.profile:focus {
+  outline: 0.5rem solid white;
+  outline-offset: -0.5rem;
+}
+
+.profile:hover :is(h2, p),
+.profile:focus :is(h2, p) {
+  transform: none;
+}
+
+.profile:hover::after,
+.profile:focus::after,
+.profile:hover::before,
+.profile:focus::before {
+  opacity: 0.7;
+}
+
+.profile:hover p,
+.profile:focus p {
+  opacity: 1;
+  transition-delay: 200ms;
+}
+
+.profile:hover img,
+.profile:focus img {
+  filter: grayscale(0);
+  transform: scale(1.05) rotate(1deg);
+}
+
