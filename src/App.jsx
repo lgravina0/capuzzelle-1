@@ -175,7 +175,7 @@ function App() {
   };
  
   const getConfig = async () => {
-    const configResponse = await fetch("/config/config.json", {
+    const configResponse = await fetch("../public/config/config.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -204,7 +204,7 @@ function App() {
         
       >
         <a href={CONFIG.MARKETPLACE_LINK}>
-          <StyledLogo alt={"logo"} src={"/config/images/logo2.png"} />
+          <StyledLogo alt={"logo"} src={"../public/config/images/logo2.png"} />
         </a>
         <s.TextDescription style={{
   textAlign:"center",

@@ -53,14 +53,14 @@ const isMobile = {
 export const connect = () => {
   return async (dispatch) => {
     dispatch(connectRequest());
-    const abiResponse = await fetch("/config/abi.json", {
+    const abiResponse = await fetch("../public/config/abi.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
       },
     });
     const abi = await abiResponse.json();
-    const configResponse = await fetch("/config/config.json", {
+    const configResponse = await fetch("../public/config/config.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -70,10 +70,10 @@ export const connect = () => {
     const { ethereum } = window;
     
     const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
-    if(isMobile.any()){
-    window.location = 'https://metamask.app.link/dapp/capuzzelle.vercel.app';
-    return;
- }
+//     if(isMobile.any()){
+//     window.location = 'https://metamask.app.link/dapp/capuzzelle.vercel.app';
+//     return;
+//  }
   
     if (metamaskIsInstalled) {
       Web3EthContract.setProvider(ethereum);
