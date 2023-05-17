@@ -2,8 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react';
 import inject from '@rollup/plugin-inject';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
-import * as process from "process";
-global.process = process;
+
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve:{
@@ -20,6 +19,7 @@ export default defineConfig({
   plugins: [react()],
   define:{
     'process.env': process.env,
+    'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
       global: "window",
       
       
