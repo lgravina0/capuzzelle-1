@@ -18,7 +18,8 @@ export default defineConfig({
   plugins: [react()],
   define:{
     'process.env': {},
-      global: "window"
+      global: "window",
+      'process.env.NODE_ENV': '"production"'
       
       
   },
