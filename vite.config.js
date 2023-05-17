@@ -19,7 +19,7 @@ export default defineConfig({
   define:{
     'process.env': process.env,
       global: "window",
-      'process.nextTick':`"${process.env.nextTick}"` ,
+      'process.nextTick':`"${process.nextTick}"` ,
       'import.meta.hot': 'import.meta.hot' 
       
       
