@@ -2,6 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react';
 import inject from '@rollup/plugin-inject';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
+import * as process from "process";
+global.process = process;
 // https://vitejs.dev/config/
 export default defineConfig({
   resolve:{
@@ -19,8 +21,6 @@ export default defineConfig({
   define:{
     'process.env': process.env,
       global: "window",
-      'process.nextTick':`"${process.nextTick}"` ,
-      'import.meta.hot': 'import.meta.hot' 
       
       
   },
