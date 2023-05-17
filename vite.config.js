@@ -19,7 +19,6 @@ export default defineConfig({
   plugins: [react()],
   define:{
     'process.env': process.env,
-    'process.env.NODE_DEBUG': JSON.stringify(process.env.NODE_DEBUG),
       global: "window",
       
       
@@ -39,7 +38,7 @@ export default defineConfig({
     },
     sourcemap: true,
     rollupOptions: {
-			plugins: [inject({ Buffer: ['buffer', 'Buffer'] })],
+			plugins: [inject({ Buffer: ['buffer', 'Buffer'] }), inject({ Buffer: ['process', 'process'] })],
 		},
   },
   optimizeDeps: {
