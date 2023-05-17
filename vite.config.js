@@ -10,6 +10,8 @@ export default defineConfig({
       {
         find: 'web3',
         replacement: 'web3/dist/web3.min.js',
+        buffer: 'rollup-plugin-node-polyfills/polyfills/buffer-es6',
+        process: 'rollup-plugin-node-polyfills/polyfills/process-es6'
       },
     ],
   },
