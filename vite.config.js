@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react';
 import inject from '@rollup/plugin-inject';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -38,7 +39,8 @@ export default defineConfig({
     },
     sourcemap: true,
     rollupOptions: {
-			plugins: [inject({ Buffer: ['buffer', 'Buffer'] }), inject({ Buffer: ['process', 'process'] })],
+			plugins: [inject({ Buffer: ['buffer', 'Buffer'] }), injectProcessEnv({ 
+        NODE_ENV: 'production'})],
 		},
   },
   optimizeDeps: {
