@@ -40,7 +40,9 @@ export default defineConfig({
     sourcemap: true,
     rollupOptions: {
 			plugins: [inject({ Buffer: ['buffer', 'Buffer'] }), injectProcessEnv({ 
-        NODE_ENV: 'production'})],
+        NODE_ENV: 'production',
+        nextTick: process.nextTick})
+    ],
 		},
   },
   optimizeDeps: {
