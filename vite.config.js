@@ -19,7 +19,8 @@ export default defineConfig({
   define:{
     'process.env': {},
       global: "window",
-      'process.env.NODE_ENV': '"production"'
+      'process.env.NODE_ENV': '"production"',
+      'import.meta.hot': 'import.meta.hot' 
       
       
   },
@@ -36,6 +37,7 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
+    sourcemap: true,
     rollupOptions: {
 			plugins: [inject({ Buffer: ['buffer', 'Buffer'] })],
 		},
