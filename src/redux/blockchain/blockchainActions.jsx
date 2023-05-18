@@ -72,7 +72,7 @@ export const connect = () => {
     
     const metamaskIsInstalled = ethereum && ethereum.isMetaMask;
     if(isMobile.any() && !metamaskIsInstalled){
-    window.location = 'https://metamask.app.link/dapp/capuzzelle-test.vercel.app';
+    window.location = 'https://metamask.app.link/dapp/capuzzelle.vercel.app';
     return;
  }
   
