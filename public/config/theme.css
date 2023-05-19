@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
 :root {
-  --primary: #ffffff;
-  --primary-text: #000000;
+  --primary:  #000000;
+  --primary-text: #ffffff;
   --secondary: #ff1dec;
   --secondary-text: #ffffff;
   --accent: #505050;
@@ -14,7 +14,7 @@ html {
 }
 body{
   font-family: 'Inconsolata', monospace !important; 
-
+  background-color: var(--primary);
 }
 nav#header {
   display: flex;
@@ -23,7 +23,7 @@ nav#header {
   width: 100%;
   
   float: left;
-  background-color: white;
+  background-color: var(--primary);
   
   z-index: 99;
   padding-left: 24px;
@@ -50,7 +50,7 @@ li {
 
 li a {
   display: block;
-  color: rgb(0, 0, 0);
+  color: var(--primary-text);
   text-align: center;
   padding: 24px 16px;
   text-decoration: none;
@@ -58,7 +58,7 @@ li a {
 
 li a:hover {
   /* background-color: #111111; */
-  color: black;
+  color: var(--primary-text);
   font-weight: 600;
   text-decoration: line-through;
 }
@@ -132,12 +132,12 @@ h3 {
 
 }
 section#gallery,#team,#faq,#progetto {
-  
+  color: var(--primary-text);
   width: 80%;
   margin: 128px auto;
   /* position: relative; */
   /* float: left; */
-  background-color: white;
+  
   /* border-bottom: 1px solid black;*/
 }
 .card-group {
@@ -156,11 +156,11 @@ section#gallery,#team,#faq,#progetto {
   margin-bottom: 24px;
 }
 .card-group .card h3 {
-  color: black;
+  color: var(--primary-text);
   font-size: 24px;
 }
 .card-group .card p {
-  color: black;
+  color: var(--primary-text);
   font-size: 16px;
 }
 @media (max-width: 900px) {
@@ -177,7 +177,7 @@ section#gallery,#team,#faq,#progetto {
     margin: 48px auto;
     /* position: relative; */
     /* float: left; */
-    background-color: white;
+    
     /* border-bottom: 1px solid black;*/
   }}
 
@@ -226,7 +226,10 @@ section#footer {
     
 }
   nav#header.mobile {
-    display:block
+    display:flex
+}
+  nav#header.mobile .logo {
+    margin: auto;
 }
 nav#header.desk {
   display: none;
@@ -245,11 +248,11 @@ nav#header.desk {
 
 .accordion .accordion-item {
   font-family: 'Inconsolata', monospace !important; 
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--primary-text);
 }
 .accordion .accordion-item button[aria-expanded=true] {
   font-family: 'Inconsolata', monospace !important; 
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--primary-text);
 }
 .accordion button {
   font-family: 'Inconsolata', monospace !important; 
@@ -258,7 +261,7 @@ nav#header.desk {
   text-align: left;
   width: 100%;
   padding: 1em 0;
-  color: #000000;
+  color: var(--primary-text);
   font-size: 1.15rem;
   font-weight: 400;
   border: none;
@@ -268,13 +271,13 @@ nav#header.desk {
 .accordion button:hover, .accordion button:focus {
   font-family: 'Inconsolata', monospace !important; 
   cursor: pointer;
-  color: #000000;
+  color: var(--primary-text);
 }
 .accordion button:hover::after, .accordion button:focus::after {
   font-family: 'Inconsolata', monospace !important; 
   cursor: pointer;
   color: #03b5d2;
-  border: 1px solid #000000;
+  border: 1px solid var(--primary-text);
 }
 .accordion button .accordion-title {
   padding: 1em 1.5em 1em 0;
@@ -310,7 +313,7 @@ nav#header.desk {
   background: currentColor;
 }
 .accordion button[aria-expanded=true] {
-  color: #000000;
+  color: var(--primary-text);
 }
 .accordion button[aria-expanded=true] .icon::after {
   width: 0;
@@ -325,6 +328,7 @@ nav#header.desk {
   opacity: 0;
   max-height: 0;
   overflow: hidden;
+  color: var(--primary-text);
   transition: opacity 200ms linear, max-height 200ms linear;
   will-change: opacity, max-height;
 }

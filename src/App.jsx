@@ -9,14 +9,13 @@ const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
 
 export const StyledButton = styled.button`
-  padding: 10px;
+  
   border-radius: 8px;
   border: none;
   background-color: #fac05e;
-  padding: 10px;
+  padding: 8px 24px;
   font-weight: bold;
   color: #000000;
-  width: 100px;
   cursor: pointer;
   
   :active {
@@ -59,6 +58,8 @@ export const ResponsiveWrapper = styled.div`
   justify-content: stretched;
   align-items: stretched;
   width: 100%;
+  background: var(--primary);
+ 
   @media (min-width: 767px) {
     flex-direction: row;
   }
@@ -108,14 +109,14 @@ function App() {
       SYMBOL: "",
       ID: 0,
     },
-    NFT_NAME: "",
+    NFT_NAME: "'A Capuzzella",
     SYMBOL: "",
     MAX_SUPPLY: 1,
     WEI_COST: 0,
-    DISPLAY_COST: 0,
+    DISPLAY_COST: '0.00',
     GAS_LIMIT: 0,
-    MARKETPLACE: "",
-    MARKETPLACE_LINK: "",
+    MARKETPLACE: "opensea",
+    MARKETPLACE_LINK: "https://opensea.io/collection/e-capuzzelle",
     SHOW_BACKGROUND: false,
   });
 
@@ -139,13 +140,13 @@ function App() {
       })
       .once("error", (err) => {
         console.log(err);
-        setFeedback("Sorry, something went wrong please try again later.");
+        setFeedback(" Spiacente, qualcosa è andato storto. Riprova");
         setClaimingNft(false);
       })
       .then((receipt) => {
         console.log(receipt);
         setFeedback(
-          `WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+          `UA, ${CONFIG.NFT_NAME} è tua! visita opensea per vederla.`
         );
         setClaimingNft(false);
         dispatch(fetchData(blockchain.account));
@@ -209,8 +210,8 @@ function App() {
         <s.TextDescription style={{
   textAlign:"center",
   margin:"24px",
-}}>Immortala la storia e la cultura di Napoli con i teschi delle Fontanelle trasformati in NFT unici e meravigliosi.
-Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
+}}>Immortala la storia e la cultura di Napoli con le capuzzelle del cimitero delle Fontanelle trasformate in NFT unici.
+Adotta la tua capuzzella e fai parte del nostro mondo.
 
 
 </s.TextDescription>
@@ -226,6 +227,7 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
               backgroundColor:"#000000",
               color:"#ffffff",
               borderRadius:"24px",
+              border:"2px solid var(--primary-text)",
             }}
           >
             <s.TextTitle
@@ -261,12 +263,12 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
                 <s.TextTitle
                   style={{ textAlign: "center", color: "#ffffff" }}
                 >
-                  The sale has ended.
+                  Tutte le capuzzelle sono state adottate.
                 </s.TextTitle>
                 <s.TextDescription
                   style={{ textAlign: "center", color: "#ffffff" }}
                 >
-                  You can still find {CONFIG.NFT_NAME} on
+                  Puoi ancora trovare {CONFIG.NFT_NAME} su
                 </s.TextDescription>
                 <s.SpacerSmall />
                 <StyledLink target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
@@ -278,14 +280,14 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
                 <s.TextTitle
                   style={{ textAlign: "center", color: "#ffffff" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  {CONFIG.DISPLAY_COST}{" "}
+                  {CONFIG.NETWORK.SYMBOL}
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "#ffffff" }}
                 >
-                  Excluding gas fees.
+                  escluse tasse
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -297,7 +299,7 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
                         color: "#ffffff",
                       }}
                     >
-                      Connect to the {CONFIG.NETWORK.NAME} network
+                      Connettiti alla rete {CONFIG.NETWORK.NAME}
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
@@ -307,7 +309,7 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
                         getData();
                       }}
                     >
-                      CONNECT
+                      CONNETTI IL WALLET
                     </StyledButton>
                     {blockchain.errorMsg !== "" ? (
                       <>
@@ -331,7 +333,7 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
                         color: "#ffffff",
                       }}
                     >
-                      {feedback}
+                      {/* {feedback} */}
                     </s.TextDescription>
                     {/* <s.SpacerMedium />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
@@ -375,7 +377,7 @@ Acquista ora la tua propria capuzzella e fai parte del nostro mondo.
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "BUY"}
+                        {claimingNft ? "STO ADOTTANDO UNA CAPUZZELLA" : "ADOTTA UNA CAPUZZELLA"}
                       </StyledButton>
                     </s.Container>
                   </>
