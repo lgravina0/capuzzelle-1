@@ -4,29 +4,13 @@ import { fetchData } from "./redux/data/dataActions.jsx";
 import * as s from "./styles/globalStyles.jsx";
 import styled from "styled-components";
 
-import "./app.css";
+import "./App.css";
 import Hero from "./components/hero/hero.jsx";
 import WalletConnection from "./components/walletConnection/walletConnection.jsx";
 
-const truncate = (input, len) =>
-  input.length > len ? `${input.substring(0, len)}...` : input;
 
-// export const StyledButton = styled.button`
-//   border-radius: 8px;
-//   border: none;
-//   background-color: #fac05e;
-//   padding: 8px 24px;
-//   font-weight: 900;
-//   color: #000000;
-//   cursor: pointer;
 
-//   :active {
-//     box-shadow: none;
-//     -webkit-box-shadow: none;
-//     -moz-box-shadow: none;
-//     font-family: "Inconsolata", monospace;
-//   }
-// `;
+
 
 export const StyledRoundButton = styled.button`
   padding: 10px;
@@ -53,19 +37,7 @@ export const StyledRoundButton = styled.button`
   }
 `;
 
-// export const ResponsiveWrapper = styled.div`
-//   display: flex;
-//   flex: 1;
-//   flex-direction: column;
-//   justify-content: stretched;
-//   align-items: stretched;
-//   width: 100%;
-//   background: var(--primary);
 
-//   @media (min-width: 767px) {
-//     flex-direction: row;
-//   }
-// `;
 
 export const StyledImg = styled.img`
   box-shadow: 0px 5px 11px 2px rgba(0, 0, 0, 0.7);
@@ -82,18 +54,11 @@ export const StyledImg = styled.img`
   transition: width 0.5s;
 `;
 
-// export const StyledLink = styled.a`
-//   color: #ffffff;
-//   text-decoration: underline;
-// `;
+
 
 function App() {
   const dispatch = useDispatch();
   const blockchain = useSelector((state) => state.blockchain);
-  const data = useSelector((state) => state.data);
-  const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
-  const [mintAmount, setMintAmount] = useState(1);
   const [showSite, setshowSite] = useState(false);
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "",
@@ -113,18 +78,7 @@ function App() {
     MARKETPLACE_LINK: "https://opensea.io/collection/e-capuzzelle",
     SHOW_BACKGROUND: false,
   });
-  const toggleAccordion = (item) => {
-    const items = document.querySelectorAll(".accordion button");
-    const itemToggle = this.getAttribute("aria-expanded");
 
-    for (i = 0; i < items.length; i++) {
-      items[i].setAttribute("aria-expanded", "false");
-    }
-
-    if (itemToggle == "false") {
-      item.setAttribute("aria-expanded", "true");
-    }
-  };
 
   const getData = () => {
     if (blockchain.account !== "" && blockchain.smartContract !== null) {
@@ -167,171 +121,6 @@ function App() {
       <section id="crypta"></section>
       {
         <div className={showSite ? "show" : "hide"}>
-          {/* <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
-                <s.SpacerLarge />
-                <s.Container
-                  flex={2}
-                  jc={"center"}
-                  ai={"center"}
-                  style={{
-                    backgroundColor: "#000000",
-                    color: "#ffffff",
-                    borderRadius: "24px",
-                    border: "2px solid var(--primary-text)",
-                  }}
-                >
-                  <s.TextTitle
-                    style={{
-                      textAlign: "center",
-                      fontSize: 50,
-                      fontWeight: "bold",
-                      color: "#ffffff",
-                    }}
-                  >
-                    {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-                  </s.TextTitle>
-                  <s.TextDescription
-                    style={{
-                      textAlign: "center",
-                      color: "#000000",
-                    }}
-                  >
-                    <StyledLink target={"_blank"} href={CONFIG.SCAN_LINK}>
-                      {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
-                    </StyledLink>
-                  </s.TextDescription>
-                  <span
-                    style={{
-                      textAlign: "center",
-                    }}
-                  ></span>
-                  <s.SpacerSmall />
-                  {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-                    <>
-                      <s.TextTitle
-                        style={{ textAlign: "center", color: "#ffffff" }}
-                      >
-                        Tutte le capuzzelle sono state adottate.
-                      </s.TextTitle>
-                      <s.TextDescription
-                        style={{ textAlign: "center", color: "#ffffff" }}
-                      >
-                        Puoi ancora trovare {CONFIG.NFT_NAME} su
-                      </s.TextDescription>
-                      <s.SpacerSmall />
-                      <StyledLink
-                        target={"_blank"}
-                        href={CONFIG.MARKETPLACE_LINK}
-                      >
-                        {CONFIG.MARKETPLACE}
-                      </StyledLink>
-                    </>
-                  ) : (
-                    <>
-                      <s.TextTitle
-                        style={{ textAlign: "center", color: "#ffffff" }}
-                      >
-                        {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}
-                      </s.TextTitle>
-                      <s.SpacerXSmall />
-                      <s.TextDescription
-                        style={{ textAlign: "center", color: "#ffffff" }}
-                      >
-                        escluse tasse
-                      </s.TextDescription>
-                      <s.SpacerSmall />
-                      {blockchain.account === "" ||
-                      blockchain.smartContract === null ? (
-                        <s.Container ai={"center"} jc={"center"}>
-                          <s.TextDescription
-                            style={{
-                              textAlign: "center",
-                              color: "#ffffff",
-                            }}
-                          >
-                            Connettiti alla rete {CONFIG.NETWORK.NAME}
-                          </s.TextDescription>
-                          <s.SpacerSmall />
-                          <StyledButton
-                            onClick={(e) => {
-                              e.preventDefault();
-                              dispatch(connect());
-                              getData();
-                            }}
-                          >
-                            CONNETTI IL WALLET
-                          </StyledButton>
-                          {blockchain.errorMsg !== "" ? (
-                            <>
-                              <s.SpacerSmall />
-                              <s.TextDescription
-                                style={{
-                                  textAlign: "center",
-                                  color: "#ffffff",
-                                }}
-                              >
-                                {blockchain.errorMsg}
-                              </s.TextDescription>
-                            </>
-                          ) : null}
-                        </s.Container>
-                      ) : (
-                        <>
-                          <s.TextDescription
-                            style={{
-                              textAlign: "center",
-                              color: "#ffffff",
-                            }}
-                          >
-                          </s.TextDescription>
-                         
-                          <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                            <StyledButton
-                              disabled={claimingNft ? 1 : 0}
-                              onClick={(e) => {
-                                e.preventDefault();
-                                claimNFTs();
-                                getData();
-                              }}
-                            >
-                              {claimingNft
-                                ? "STO ADOTTANDO UNA CAPUZZELLA"
-                                : "ADOTTA UNA CAPUZZELLA"}
-                            </StyledButton>
-                          </s.Container>
-                        </>
-                      )}
-                    </>
-                  )}
-                  <s.SpacerMedium />
-                </s.Container>
-                <s.SpacerLarge />
-              </ResponsiveWrapper> */}
-
-          {/* <s.SpacerMedium />
-          <s.Container jc={"center"} ai={"center"} style={{ width: "70%" }}>
-            <s.TextDescription
-              style={{
-                textAlign: "center",
-                color: "var(--primary-text)",
-              }}
-            >
-              Please make sure you are connected to the right network (
-              {CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please
-              note: Once you make the purchase, you cannot undo this action.
-            </s.TextDescription>
-            <s.SpacerSmall />
-            <s.TextDescription
-              style={{
-                textAlign: "center",
-                color: "var(--primary-text)",
-              }}
-            >
-              We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract
-              to successfully mint your NFT. We recommend that you don't lower
-              the gas limit.
-            </s.TextDescription>
-          </s.Container> */}
           <section id="progettoegallery">
             <WalletConnection></WalletConnection>
             <div id="containerProgettoeGallery">
