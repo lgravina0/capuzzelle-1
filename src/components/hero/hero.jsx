@@ -19,7 +19,7 @@ function Hero(props) {
 
   
   return (
-    <div id="hero tile" className={css.containerHero}>
+    <div id="hero" className={css.containerHero}>
       <a href={CONFIG.MARKETPLACE_LINK}>
         <img
           src="/config/images/crypta_logo.svg"
