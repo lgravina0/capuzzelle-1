@@ -1,8 +1,6 @@
 .walletConnectionContainer {
     width: 100%;
-
-    height: 45vh;
-    padding: 20px;
+    padding: 32px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
@@ -23,6 +21,7 @@
     color: black;
 }
 .walletLink{
+    margin-top: 8px;
     color: black;
     font-family: 'Inconsolata', monospace !important; 
     font-size: 16px;
@@ -31,9 +30,10 @@
 .title {
     font-family: 'Inconsolata', monospace !important; 
     font-size: 32px;
+    font-weight: 700;
 }
 .subtitle {
-    margin-top: 20px;
+    margin-top: 8px;
     font-family: 'Inconsolata', monospace !important; 
     font-size: 16px;
 }
@@ -41,11 +41,11 @@
     margin-top: 20px;
     font-family: 'Inconsolata', monospace !important; 
     font-size: 32px;
-    font-weight: 900;
+    font-weight: 700;
 
 }
 .howMuchSubtitle{
-    margin-top: 10px;
+    margin-top: 0px;
     font-family: 'Inconsolata', monospace !important; 
     font-size: 15px;
     
@@ -62,14 +62,14 @@
     margin: 25px auto 10px auto;
     cursor: pointer;
     width: 100%;
-    font-weight: 900;
-    padding: 20px;
+    font-weight: 700;
+    padding: 16px;
     box-sizing: border-box;
     display: flex;
     justify-content: center;
 }
 .info{
-    margin-top: 10px;
+    margin-top: 8px;
     font-family: 'Inconsolata', monospace !important; 
     font-size: 16px;
 }

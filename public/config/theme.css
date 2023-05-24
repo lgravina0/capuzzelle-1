@@ -13,6 +13,7 @@ html {
   scroll-behavior: smooth;
 }
 body{
+  background-color: #0C0B0B;
   font-family: 'Inconsolata', monospace !important; 
   background-color: var(--primary);
 }
@@ -90,8 +91,9 @@ li a:hover {
 h1 {
   font-size: 48px !important;
   font-weight: 500 !important;
-  margin: 0 0 56px 0 !important;
+  
 }
+
 #button:hover {
   cursor: pointer;
   background-color: #333;
@@ -121,12 +123,12 @@ h3 {
   background: #242121;
   border-radius: 16px;
   flex-direction: column;
-  padding: 20px;
+  padding: 32px;
   box-sizing: border-box;
   display: flex;
   gap: 15px;
   text-align: left;
-  height: 60vh;
+  height: 100%;
   overflow: auto;
 
 }
@@ -147,12 +149,16 @@ section#gallery,#team,#progetto {
   
   /* border-bottom: 1px solid black;*/
 }
+p {
+  font-size: 16px;
+  line-height: 22px;
+}
 #gallery{
-  height: 60vh;
+  height: 390px;
   background: #59CD90;
   border-radius: 16px;
   width: 50%;
-  padding: 20px;
+  padding: 32px;
   box-sizing: border-box;
   background-image: url('/config/images/gallery.png');
   background-position: 20% 20%;
@@ -208,7 +214,7 @@ section#gallery,#team,#progetto {
   section#gallery,#team,#progetto {
   
     width: 90%;
-    margin: 48px auto;
+    
     /* position: relative; */
     /* float: left; */
     
@@ -245,7 +251,21 @@ section#footer {
   margin: 1%;
   width: 23%;
 }
+
+@media (min-width:1441px) {
+  .show {
+    
+    max-width: 80%;
+    margin: auto;
+}
+  
+}
+
 @media (max-width:500px) {
+  .show{
+    
+    padding: 0 16px !important;
+  }
   .card-group {
     flex-direction: column;
     display: flex;

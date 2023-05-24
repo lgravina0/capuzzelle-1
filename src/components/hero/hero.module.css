@@ -4,6 +4,7 @@
     width: 90%;
 }
 .containerHero{
+    padding: 24px;
     display: flex;
     height: 100vh;
     flex-direction: column;
@@ -14,7 +15,6 @@
     text-align: center;
     color: white;
     font-size: 18px;
-    max-width: 300px;
     margin: 44px auto 5px auto;
     font-family: 'Inconsolata', monospace !important; 
 }

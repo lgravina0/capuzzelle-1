@@ -29,7 +29,7 @@ function Hero(props) {
       </a>
 
       <span className={css.textDescription}>
-        Entra nella Crypta, adotta una Capuzzella e Scopri la nostra comunity.
+        Entra nella Crypta, adotta una Capuzzella e scopri la nostra community.
       </span>
       {/* BUTTON ENTRA NELLA CRIPTA  */}
       {!props.showSite ? 
