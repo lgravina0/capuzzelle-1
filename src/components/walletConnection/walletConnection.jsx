@@ -124,80 +124,95 @@ function WalletConnection(props) {
 
   return (
     <>
-
-
-
       <div className={css.walletConnectionContainer}>
-        
-        {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? 
-        <>
-        <div className={css.title}>Uè, le capuzzelle sono tutte adottate </div>
-        <div className={css.infoNoCapuzzelle}>Non temere ci saranno nuove capuzzelle felici di essere adotatte, seguici per rimanere aggiornato sul prossimo drop!</div>
-       
-              <div className={css.containerButtons}>
-                <a href="https://opensea.io/collection/e-capuzzelle" className={css.buttonNoCapuzzelle}>OPENSEA</a>
-                <a href="https://discord.com/channels/1110284316640038922/1110284321413144698" className={css.buttonNoCapuzzelle}>DISCORD</a>
-              </div>
-        </>
-        :
-        <>
-        {blockchain.account === "" || blockchain.smartContract === null ? (
+        {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
           <>
-          <div className={css.title}>Adotta una capuzzella</div>
-          <div className={css.subtitle}>
-            Le prime 50 capuzzelle saranno adottate in modo gratuito
-          </div>
-          <div className={css.howMuch}>
-            {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}
-          </div>
-          <div className={css.howMuchSubtitle}>escluse tasse</div>
-            <button
-              className={css.button}
-              onClick={(e) => {
-                e.preventDefault();
-                dispatch(connect());
-                getData();
-              }}
-            >
-              CONNETTITI AL WALLET
-            </button>
-            <div className={css.info}>connettiti alla rete polygon</div>
-            {blockchain.errorMsg !== "" ? (
-              <>
-                <div className={css.info}>{blockchain.errorMsg}</div>
-              </>
-            ) : null}
+            <div className={css.title}>
+              Uè, le capuzzelle sono tutte adottate{" "}
+            </div>
+            <div className={css.infoNoCapuzzelle}>
+              Non temere ci saranno nuove capuzzelle felici di essere adotatte,
+              seguici per rimanere aggiornato sul prossimo drop!
+            </div>
+
+            <div className={css.containerButtons}>
+              <a
+                href="https://opensea.io/collection/e-capuzzelle"
+                className={css.buttonNoCapuzzelle}
+              >
+                OPENSEA
+              </a>
+              <a
+                href="https://discord.com/channels/1110284316640038922/1110284321413144698"
+                className={css.buttonNoCapuzzelle}
+              >
+                DISCORD
+              </a>
+            </div>
           </>
         ) : (
           <>
-          <div className={css.title}>Capuzzelle adottate</div>
-  
-             <div className={css.totaleCapuzzelle}>
-             {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-        </div>
-          <a target={"_blank"} href={CONFIG.SCAN_LINK} className={css.walletLink}>{truncate(CONFIG.CONTRACT_ADDRESS, 15)}</a>
-          <div className={css.howMuch}>
-            {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}
-          </div>
-          <div className={css.howMuchSubtitle}>escluse tasse</div>
-          <button
-            className={css.button}
-            disabled={claimingNft ? 1 : 0}
-            onClick={(e) => {
-              e.preventDefault();
-              claimNFTs();
-              getData();
-            }}
-          >
-            {claimingNft
-              ? "STAI ADOTTANDO UNA CAPUZZELLA"
-              : "ADOTTA"}
-          </button>
-          <div className={css.info}>connettiti alla rete polygon</div>
+            {blockchain.account === "" || blockchain.smartContract === null ? (
+              <>
+                <div className={css.title}>Adotta una capuzzella</div>
+                <div className={css.subtitle}>
+                  Le prime 50 capuzzelle saranno adottate in modo gratuito
+                </div>
+                <div className={css.howMuch}>
+                  {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}
+                </div>
+                <div className={css.howMuchSubtitle}>escluse tasse</div>
+                <button
+                  className={css.button}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    dispatch(connect());
+                    getData();
+                  }}
+                >
+                  CONNETTITI AL WALLET
+                </button>
+                <div className={css.info}>connettiti alla rete polygon</div>
+                {blockchain.errorMsg !== "" ? (
+                  <>
+                    <div className={css.info}>{blockchain.errorMsg}</div>
+                  </>
+                ) : null}
+              </>
+            ) : (
+              <>
+                <div className={css.title}>Capuzzelle adottate</div>
+
+                <div className={css.totaleCapuzzelle}>
+                  {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+                </div>
+                <a
+                  target={"_blank"}
+                  href={CONFIG.SCAN_LINK}
+                  className={css.walletLink}
+                >
+                  {truncate(CONFIG.CONTRACT_ADDRESS, 15)}
+                </a>
+                <div className={css.howMuch}>
+                  {CONFIG.DISPLAY_COST} {CONFIG.NETWORK.SYMBOL}
+                </div>
+                <div className={css.howMuchSubtitle}>escluse tasse</div>
+                <button
+                  className={css.button}
+                  disabled={claimingNft ? 1 : 0}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    claimNFTs();
+                    getData();
+                  }}
+                >
+                  {claimingNft ? "STAI ADOTTANDO UNA CAPUZZELLA" : "ADOTTA"}
+                </button>
+                <div className={css.info}>connettiti alla rete polygon</div>
+              </>
+            )}
           </>
         )}
-        </>
-        }
 
         {/* <s.SpacerLarge /> */}
         {/* <s.Container

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { connect } from "./redux/blockchain/blockchainActions.jsx";
 import { fetchData } from "./redux/data/dataActions.jsx";
 import * as s from "./styles/globalStyles.jsx";
 import styled from "styled-components";
