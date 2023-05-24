@@ -17,6 +17,7 @@ body{
   font-family: 'Inconsolata', monospace !important; 
   background-color: var(--primary);
 }
+
 nav#header {
   display: flex;
   justify-content: space-between;
