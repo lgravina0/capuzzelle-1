@@ -223,14 +223,14 @@ function App() {
               </div>
               <div className="capa">
                 <div className="img">
-                  <img src="config/images/1.png" alt="lorenzo gravina" />
+                  <img src="config/images/1.png" alt="Antonio Ferrarioli" />
                 </div>
                 <div className="name">Antonio Ferraioli</div>
                 <div className="role">Head of Stuff</div>
               </div>
               <div className="capa">
                 <div className="img">
-                  <img src="config/images/2.png" alt="lorenzo gravina" />
+                  <img src="config/images/4.png" alt="Costantino Sorrentino" />
                 </div>
                 <div className="name">Costantino Sorrentino</div>
                 <div className="role">Dev</div>
