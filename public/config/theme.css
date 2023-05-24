@@ -118,27 +118,61 @@ h3 {
   font-size: 26px;
 }
 #progetto{
-  
-    display: flex;
-    justify-content: space-between;
-    gap: 20%;
+  background: #242121;
+  border-radius: 16px;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  gap: 15px;
+  text-align: left;
+  height: 60vh;
+  overflow: auto;
 
 }
 #team{
-  
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 20%;
 
 }
-section#gallery,#team,#faq,#progetto {
+section#gallery,#team,#progetto {
   color: var(--primary-text);
-  width: 80%;
-  margin: 128px auto;
+  width: 50%;
+ flex: 1;
+ flex-basis: 400px;
   /* position: relative; */
   /* float: left; */
   
   /* border-bottom: 1px solid black;*/
+}
+#gallery{
+  height: 60vh;
+  background: #59CD90;
+  border-radius: 16px;
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-image: url('/config/images/gallery.png');
+  background-position: 20% 20%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+#gallery #collection{
+  background: black;
+  font-family: 'Inconsolata', monospace !important; 
+  font-weight: 900;
+  color: white;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  margin-top: auto;
 }
 .card-group {
   flex-direction: row;
@@ -171,7 +205,7 @@ section#gallery,#team,#faq,#progetto {
     padding: 0 !important;
     
 }
-  section#gallery,#team,#faq,#progetto {
+  section#gallery,#team,#progetto {
   
     width: 90%;
     margin: 48px auto;
