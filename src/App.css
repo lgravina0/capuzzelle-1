@@ -184,12 +184,7 @@ color: white;
 }
 @media (min-width:10px) and (max-width:500px){
  
-  #roadmap #roadmapContainer #title{
-    display: none!important;
-  }
-  #roadmap #roadmapContainer #description{
-    display: none!important;
-  }
+  
   #roadmap #social{
     width: 100%;
   }
