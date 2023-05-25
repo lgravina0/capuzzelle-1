@@ -152,7 +152,7 @@ section#gallery,#team,#progetto {
 }
 p {
   font-size: 16px;
-  line-height: 22px;
+  line-height: 22px !important;
 }
 #gallery{
   height: 390px;
