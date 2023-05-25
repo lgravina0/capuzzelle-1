@@ -80,6 +80,13 @@ color: white;
 .stroked{
   text-decoration: line-through;
 }
+.container-faq h1 {
+  color: white;
+  text-align: left;
+  margin-bottom: 24px
+px
+;
+}
 
 #roadmap #roadmapContainer .roadmapItem{
   font-weight: 900;
@@ -93,6 +100,7 @@ color: white;
   box-sizing: border-box;
   margin-bottom: 10px;
   border-radius: 8px;
+  text-align: left;
 }
 #lecape{
   background-color: #242121;
@@ -128,14 +136,15 @@ color: white;
   font-family: 'Inconsolata', monospace !important; 
 }
 #lecape #containerCape .capa .name{
-  color: white;
-  font-size: 24px;
-  font-weight: 900;
-  font-family: 'Inconsolata', monospace !important; 
-  margin-bottom: 25px;
-  margin-top: 20px;
+  color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    font-family: Inconsolata,monospace!important;
+    margin-bottom: 8px;
+    margin-top: 16px;
 }
 #lecape #containerCape .capa .img{
+  box-shadow: 0px 10px 30px black;
   border-radius: 24px;
   overflow: hidden;
   display: flex;
