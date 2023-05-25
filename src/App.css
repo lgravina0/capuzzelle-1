@@ -20,9 +20,10 @@
   background-image: url('/config/images/sfondo_crypta.svg');
   height: 100vh;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
 }
 .show{
+  margin-top: 24px;
   display: block;
   padding: 0 24px;
 }
@@ -83,7 +84,7 @@ color: white;
 #roadmap #roadmapContainer .roadmapItem{
   font-weight: 900;
   width: 100%;
-  background: #EE6352;
+  background: #ffab1c;
   display: flex;
   height: 78px;
   align-items: center;
