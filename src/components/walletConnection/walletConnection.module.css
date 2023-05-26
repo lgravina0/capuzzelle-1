@@ -67,6 +67,7 @@
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    box-shadow: 0 10px 20px -10px #00000078;
 }
 .info{
     margin-top: 8px;

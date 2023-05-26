@@ -126,12 +126,12 @@ function App() {
             <div id="containerProgettoeGallery">
               <section id="progetto">
                 <div className="">
-                  <h1>Che cos’è Crypta Capuzzelle?</h1>
+                  <h1>💀Che cos’è Crypta Capuzzelle?💀</h1>
                 </div>
                 <div className="">
                   <p>
                     {" "}
-                    Il progetto “Crypta Capuzzelle” rappresenta la
+                    Il progetto <bold>“Crypta Capuzzelle”</bold> rappresenta la
                     trasformazione di uno dei luoghi più suggestivi e misteriosi
                     di Napoli in un’opera digitale unica. Le capuzzelle del
                     cimitero delle fontanelle sono teschi posti sulla superficie
