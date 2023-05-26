@@ -180,7 +180,7 @@ animation-duration: 30s;
 }
 #gallery img.two {
   width: 3000px;
-  margin-bottom: 24px;
+  margin-bottom: 32px;
   margin-top: 8px;
   animation-name: scroll-two;
   animation-duration: 30s;
@@ -211,7 +211,7 @@ animation-duration: 30s;
   border: none;
   cursor: pointer;
   margin-top: auto;
-  margin: 32px;
+  margin: 0 32px 32px;
 }
 .card-group {
   flex-direction: row;
