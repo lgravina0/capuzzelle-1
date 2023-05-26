@@ -1,7 +1,7 @@
 .img {
     transition: width 0.5s;
     transition: height 0.5s;
-    width: 90%;
+    width: 100%;
 }
 .containerHero{
     padding: 24px;
@@ -9,6 +9,7 @@
     height: 100vh;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 .textDescription {

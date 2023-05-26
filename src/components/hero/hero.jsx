@@ -20,13 +20,13 @@ function Hero(props) {
   
   return (
     <div id="hero" className={css.containerHero}>
-      <a href={CONFIG.MARKETPLACE_LINK}>
+      
         <img
-          src="/config/images/crypta_logo.svg"
+          src="/config/images/crypta_logo.jpg"
           className={css.img}
           alt="logo_capuzzelle"
         />
-      </a>
+      
 
       <span className={css.textDescription}>
         Entra nella Crypta, adotta una Capuzzella e scopri la nostra community.

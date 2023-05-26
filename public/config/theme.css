@@ -155,18 +155,48 @@ p {
   line-height: 22px !important;
 }
 #gallery{
-  height: 390px;
+  height: 100%;
   background: #31df83;
   border-radius: 16px;
   width: 50%;
-  padding: 32px;
+  
   box-sizing: border-box;
-  background-image: url('/config/images/gallery.png');
-  background-position: 20% 20%;
-  background-repeat: no-repeat;
-  background-size: contain;
+  
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+#gallery img.one {
+  width: 3000px;
+  
+  margin-top: 32px;
+animation-name: scroll;
+animation-duration: 30s;
+    animation-direction: alternate-reverse;
+    transform: translate(32px, 0px);
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  transform: translate(32px, 0px);
+}
+#gallery img.two {
+  width: 3000px;
+  margin-bottom: 24px;
+  margin-top: 8px;
+  animation-name: scroll-two;
+  animation-duration: 30s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    
+    animation-iteration-count: infinite;
+  transform: translate(-32px, 10px);
+}
+@keyframes scroll {
+  0%{transform: translate(32px, 0px);}
+  100%{transform: translate(-2000px, 0px);}
+}
+@keyframes scroll-two {
+  0%{transform: translate(-32px, 0px);}
+  100%{transform: translate(-2000px, 0px);}
 }
 #gallery #collection{
   background: black;
@@ -176,11 +206,12 @@ p {
   padding: 15px;
   box-sizing: border-box;
   border-radius: 8px;
-  width: 100%;
+  
   outline: none;
   border: none;
   cursor: pointer;
   margin-top: auto;
+  margin: 32px;
 }
 .card-group {
   flex-direction: row;
@@ -237,7 +268,7 @@ section#footer {
   
 }
 #footer img {
-  width: 50px;
+  width: 150px;
 }
 #footer p {
   color: white;
